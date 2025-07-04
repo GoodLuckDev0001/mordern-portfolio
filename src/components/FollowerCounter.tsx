@@ -45,22 +45,22 @@ export const FollowerCounter = () => {
 
   return (
     <div className="text-center">
-      <div className="mb-4 flex justify-center">
+      <div className="mb-3 flex justify-center">
         <Heart 
-          className={`w-16 h-16 transition-all duration-500 ${
+          className={`w-12 h-12 transition-all duration-500 ${
             hasVisited ? 'text-red-500 animate-bounce-soft' : 'text-red-400'
           }`}
           fill="currentColor"
         />
       </div>
       <div 
-        className={`text-4xl font-bold text-white mb-2 transition-all duration-500 ${
+        className={`text-3xl font-bold text-white mb-2 transition-all duration-500 ${
           hasVisited ? 'animate-count-up text-primary' : ''
         }`}
       >
         {followers.toLocaleString()}
       </div>
-      <p className="text-muted-foreground text-sm">Users Followed</p>
+      <p className="text-muted-foreground text-xs">Users Followed</p>
     </div>
   );
 };

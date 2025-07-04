@@ -35,13 +35,13 @@ export const SocialIcons = () => {
           key={label}
           href={href}
           className={`
-            p-4 rounded-xl flex items-center justify-center
+            p-3 rounded-xl flex items-center justify-center
             transition-all duration-300 hover:scale-110 hover:shadow-lg
             ${className}
           `}
           aria-label={label}
         >
-          <Icon className="w-6 h-6 text-white" />
+          <Icon className="w-5 h-5 text-white" />
         </a>
       ))}
     </div>

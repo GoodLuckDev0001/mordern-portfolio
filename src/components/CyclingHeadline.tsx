@@ -1,14 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import confetti from "canvas-confetti";
 
 interface CyclingHeadlineProps {
   headlines: string[];
-  interval?: number;
 }
 
-export const CyclingHeadline = ({ headlines, interval = 3000 }: CyclingHeadlineProps) => {
+export const CyclingHeadline = ({ headlines }: CyclingHeadlineProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
 
   const triggerConfetti = () => {
     const colors = ['#3B82F6', '#8B5CF6', '#F59E0B', '#10B981'];
@@ -24,36 +22,22 @@ export const CyclingHeadline = ({ headlines, interval = 3000 }: CyclingHeadlineP
     });
   };
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIsAnimating(true);
-      
-      setTimeout(() => {
-        setCurrentIndex((prevIndex) => 
-          prevIndex === headlines.length - 1 ? 0 : prevIndex + 1
-        );
-        triggerConfetti();
-        setIsAnimating(false);
-      }, 150);
-    }, interval);
-
-    return () => clearInterval(timer);
-  }, [headlines.length, interval]);
-
   const handleClick = () => {
+    // Cycle to next headline
+    setCurrentIndex((prevIndex) => 
+      prevIndex === headlines.length - 1 ? 0 : prevIndex + 1
+    );
+    
+    // Trigger confetti effect
     triggerConfetti();
   };
 
   return (
     <div 
-      className="text-2xl font-bold text-white cursor-pointer select-none"
+      className="text-lg font-bold text-white cursor-pointer select-none hover:scale-105 transition-transform duration-200"
       onClick={handleClick}
     >
-      <span
-        className={`inline-block transition-all duration-300 ${
-          isAnimating ? 'transform scale-95 opacity-50' : 'transform scale-100 opacity-100'
-        }`}
-      >
+      <span className="inline-block">
         {headlines[currentIndex]}
       </span>
     </div>
