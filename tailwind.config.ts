@@ -61,7 +61,27 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Portfolio colors
+				success: 'hsl(var(--success))',
+				'success-light': 'hsl(var(--success-light))',
+				warning: 'hsl(var(--warning))',
+				info: 'hsl(var(--info))',
+				purple: 'hsl(var(--purple))',
+				orange: 'hsl(var(--orange))',
+				green: 'hsl(var(--green))',
+				red: 'hsl(var(--red))'
+			},
+			backgroundImage: {
+				'gradient-blue': 'var(--gradient-blue)',
+				'gradient-purple': 'var(--gradient-purple)',
+				'gradient-orange': 'var(--gradient-orange)',
+				'gradient-green': 'var(--gradient-green)',
+				'gradient-card': 'var(--gradient-card)'
+			},
+			boxShadow: {
+				'glow': 'var(--shadow-glow)',
+				'card': 'var(--shadow-card)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -88,7 +108,41 @@ export default {
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'count-up': 'count-up 0.5s ease-out',
+				'bounce-soft': 'bounce-soft 0.6s ease-out',
+				'slide-up': 'slide-up 0.4s ease-out',
+				'fade-in': 'fade-in 0.3s ease-out'
+			},
+			keyframes: {
+				'pulse-glow': {
+					'0%, 100%': { 
+						boxShadow: '0 0 20px hsl(var(--primary) / 0.3)',
+						transform: 'scale(1)'
+					},
+					'50%': { 
+						boxShadow: '0 0 40px hsl(var(--primary) / 0.6)',
+						transform: 'scale(1.02)'
+					}
+				},
+				'count-up': {
+					'0%': { transform: 'translateY(10px)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' }
+				},
+				'bounce-soft': {
+					'0%': { transform: 'scale(1)' },
+					'50%': { transform: 'scale(1.05)' },
+					'100%': { transform: 'scale(1)' }
+				},
+				'slide-up': {
+					'0%': { transform: 'translateY(20px)', opacity: '0' },
+					'100%': { transform: 'translateY(0)', opacity: '1' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
+				}
 			}
 		}
 	},
