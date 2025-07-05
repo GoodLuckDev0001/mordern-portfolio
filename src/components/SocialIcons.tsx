@@ -23,7 +23,7 @@ export const SocialIcons = () => {
     },
     {
       icon: DiscordIcon,
-      href: "https://discord.com/user/1368778162837651466",
+      href: "https://discord.com/users/1368778162837651466",
       label: "Discord",
       className: "bg-indigo-600 hover:bg-indigo-500"
     },
