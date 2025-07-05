@@ -127,3 +127,24 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .bg-card-dark {
+    background: #181a20;
+  }
+  .bg-card {
+    background: hsl(var(--card));
+  }
+  .bg-gradient-blue {
+    background: #1877f2;
+  }
+  .bg-gradient-purple {
+    background: #7b2ff2;
+  }
+  .bg-gradient-orange {
+    background: #fbbc05;
+  }
+  .bg-gradient-green {
+    background: #22c55e;
+  }
+}

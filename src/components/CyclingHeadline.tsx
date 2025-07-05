@@ -34,12 +34,26 @@ export const CyclingHeadline = ({ headlines }: CyclingHeadlineProps) => {
 
   return (
     <div 
-      className="text-lg font-bold text-white cursor-pointer select-none hover:scale-105 transition-transform duration-200"
-      onClick={handleClick}
+      className="text-2xl font-extrabold text-white text-left leading-tight overflow-hidden h-[2.5em] relative"
+      onClick={() => headlines.length > 1 && handleClick()}
+      style={{ minHeight: '2.5em' }}
     >
-      <span className="inline-block">
+      <span
+        key={currentIndex}
+        className="inline-block absolute left-0 w-full transition-transform duration-500 ease-in-out"
+        style={{
+          transform: 'translateY(0)',
+          animation: 'slideUp 0.5s',
+        }}
+      >
         {headlines[currentIndex]}
       </span>
+      <style>{`
+        @keyframes slideUp {
+          0% { transform: translateY(100%); opacity: 0; }
+          100% { transform: translateY(0); opacity: 1; }
+        }
+      `}</style>
     </div>
   );
 };

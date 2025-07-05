@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { ReactNode } from "react";
+import { ReactNode, CSSProperties } from "react";
 
 interface PortfolioCardProps {
   children: ReactNode;
@@ -7,6 +7,7 @@ interface PortfolioCardProps {
   gradient?: 'blue' | 'purple' | 'orange' | 'green';
   onClick?: () => void;
   hover?: boolean;
+  style?: CSSProperties;
 }
 
 export const PortfolioCard = ({ 
@@ -14,7 +15,8 @@ export const PortfolioCard = ({
   className, 
   gradient,
   onClick,
-  hover = true
+  hover = true,
+  style
 }: PortfolioCardProps) => {
   const gradientClass = gradient ? `bg-gradient-${gradient}` : 'bg-gradient-card';
   
@@ -28,6 +30,7 @@ export const PortfolioCard = ({
         className
       )}
       onClick={onClick}
+      style={style}
     >
       {children}
     </div>

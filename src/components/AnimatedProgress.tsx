@@ -57,9 +57,6 @@ export const AnimatedProgress = ({
           strokeDashoffset={strokeDashoffset}
           strokeLinecap="round"
           className="transition-all duration-1000 ease-out"
-          style={{
-            filter: 'drop-shadow(0 0 8px currentColor)'
-          }}
         />
       </svg>
       <div className="absolute text-center">
